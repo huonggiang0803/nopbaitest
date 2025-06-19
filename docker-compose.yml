@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: baitest-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: baitest
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: giang1508
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: baitest-api
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/baitest
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: giang1508
+      SPRING_SECURITY_USER_NAME: admin
+      SPRING_SECURITY_USER_PASSWORD: admin123
+      JWT_SECRET: MzIxMjM0NTY3ODlBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWjEyMzQ1Njc=
+      JWT_EXPIRATION: 86400000
+      SERVER_ERROR_INCLUDE_MESSAGE: always
+
+volumes:
+  postgres_data:
