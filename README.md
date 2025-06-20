@@ -39,12 +39,11 @@ value:
 
 http://localhost:8080/api/users/loginUser  // đăng nhập với username và password
 http://localhost:8080/api/users/logout
-http://localhost:8080/api/users/getAllUsers // chỉ có admin mới có thể xem được
+http://localhost:8080/api/users/getAllUsers // chỉ có admin mới có thể xem
 http://localhost:8080/api/users/getUserId/5 với 5 là id người dùng
 http://localhost:8080/api/users/deleteUser/5 với 5 là id người dùng và chỉ admin mới có quyền xóa, sau khi xóa sẽ từ 0 -> 1 với 0 là trạng thái chưa bị xóa hay vô hiệu hóa
-http://localhost:8080/api/users/getAllUsers?keyword=nguyengiang với keyword có thể là id hoặc username hoặc email
-http://localhost:8080/api/users/updateUser/5 với Json
-ví dụ
+http://localhost:8080/api/users/getAllUsers?keyword=nguyengiang // keyword có thể là id hoặc username hoặc email
+http://localhost:8080/api/users/updateUser/5 //  Json
 {
    "name": "Nguyễn Hương Giang",
    "userName": "giang123",
