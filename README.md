@@ -18,8 +18,9 @@ Công nghệ:
 Cài Đặt & Chạy Ứng Dụng
 -  [Docker](https://www.docker.com)
 -  [Git](https://git-scm.com)
+  
 Build & chạy service
-docker-compose up --build
+- docker-compose up --build
 
 Chạy trên postman
 http://localhost:8080/api/users/registerUser 
